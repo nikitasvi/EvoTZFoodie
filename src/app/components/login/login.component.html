@@ -1,0 +1,27 @@
+<div class="register_main">
+    <div class="header">
+        Войдите в ваш аккаунт
+    </div>
+    <div class="form">
+        <form (ngSubmit)="submitForm()" [formGroup]="loginForm" autocomplete="off">
+            <div class="form_content">
+                <div class="form_row">
+                    <label class="label">Логин</label>
+                    <input class="input_default" formControlName="username">
+                </div>
+                <div class="form_row">
+                    <label class="label">Пароль</label>
+                    <input type="password" class="input_default" formControlName="password">
+                </div>
+                <div class="form_row">
+                    <a routerLink=""></a>
+                </div>
+                <button class="btn primary">Вход</button>
+            </div>
+        </form>
+        <p>Или войти через</p>
+        <button class="btn auth_github">
+            <icon-github></icon-github>
+        </button>
+    </div>
+</div>

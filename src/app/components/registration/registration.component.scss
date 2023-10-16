@@ -1,0 +1,45 @@
+.register_main {
+    height: calc(100vh - 230px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+.form {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    
+    width: 448px;
+    border-radius: 8px;
+
+    font-weight: 500;
+    padding: 32px 40px;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+
+        .form_row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+
+            .label {
+                font-weight: 500;
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}

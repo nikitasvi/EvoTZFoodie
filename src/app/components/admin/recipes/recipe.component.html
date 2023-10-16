@@ -1,0 +1,26 @@
+<div class="table">
+    <div class="header">
+        <div class="col">
+            НАЗВАНИЕ РЕЦЕПТА
+        </div>
+        <div class="col">
+            КРАТКОЕ ОПИСАНИЕ
+        </div>
+        <div class="col">
+            ID РЕЦЕПТА
+        </div>
+        <div class="col">
+            КАТЕГОРИЯ
+        </div>
+    </div>
+    <div class="data" *ngFor="let recipe of recipes; index as i" [ngStyle]="{'background-color': i % 2 ? 'rgba(249, 250, 251, 1)' : '' }" >
+        <div class="row black">{{ recipe.title }}</div>
+        <div class="row">{{ recipe.body }}</div>
+        <div class="row">{{ recipe.id }}</div>
+        <div class="row">{{ recipe.tags }}</div>
+        <div class="row">
+            <a [routerLink]="['/admin/recipes/', recipe.id]" class="edit"><img src="/assets/images/edit-recipe.svg"></a>
+            <a class="delete"><img src="/assets/images/delete-repice.svg"></a>
+        </div>
+    </div>
+</div>

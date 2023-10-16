@@ -1,0 +1,13 @@
+.table {
+    .header {
+        grid-template-columns: repeat(5, minmax(250px, 1fr));
+    }
+
+    .data {
+        grid-template-columns: repeat(5, minmax(250px, 1fr));
+
+        .edit {
+            margin-right: 12px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.container {
+    margin: 60px 80px;
+
+    .tabs {
+        display: flex;
+
+        .tab {
+            font-weight: 500;
+            color: rgba(107, 114, 128, 1);
+            margin: 16px 32px 16px 0px;
+            padding: 16px 4px;
+            cursor: pointer;
+
+            &.active {
+                color: rgba(58, 51, 149, 1);
+                border-bottom: 2px solid rgba(58, 51, 149, 1);
+            }
+        }
+    }
+    
+    .panel {
+        margin: 50px 0px;
+    }
+}

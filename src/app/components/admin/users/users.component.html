@@ -1,0 +1,25 @@
+<div class="table">
+  <div class="header">
+    <div class="col">НАИМЕНОВАНИЕ</div>
+    <div class="col">СТАТУС</div>
+    <div class="col">РОЛЬ</div>
+  </div>
+  <div class="data" *ngFor="let user of users">
+    <div class="row person">
+      <img [src]="user.image" class="avatar" />
+      <div class="user">
+        <div class="name">
+          {{ user.fullName | titleCase }}
+        </div>
+        <div class="username">{{ user.username }}</div>
+      </div>
+    </div>
+    <div class="status">
+      <div class="active">Активен</div>
+    </div>
+    <div class="row role">
+      {{ user.role }}
+    </div>
+    <a class="row"><div class="edit">Редактировать</div> </a>
+  </div>
+</div>

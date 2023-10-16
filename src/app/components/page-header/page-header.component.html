@@ -1,0 +1,28 @@
+<div class="page_header">
+  <div class="logo">Foodie</div>
+  <div class="nav_links">
+    <a class="nav_link" routerLink="">Главная</a>
+    <a class="nav_link" routerLink="recipe">Каталог рецептов</a>
+  </div>
+  <div *ngIf="!(isLoggedIn$ | async)" class="right">
+    <button class="btn primary" routerLink="auth">Войти</button>
+  </div>
+  <div *ngIf="isLoggedIn$ | async" class="right">
+    <div class="profile">
+      <img src="/assets/images/edit.svg" class="edit" (click)="toggleMenu()" />
+      <div class="avatar"></div>
+      <div *ngIf="user" class="user">
+        <div class="name">{{ user.fullName | titleCase }}</div>
+        <div class="role">{{ user.role | role }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu" *ngIf="isMenuToggled">
+  <div class="row without_link">
+    Вы вошли как <b>{{ user.userName }}</b>
+  </div>
+  <div class="row">Настройки аккаунта</div>
+  <div class="row" *ngIf="user.role === 'admin'" routerLink="admin/users">Администрирование</div>
+  <div class="row logout" *ngIf="user.role === 'admin'">Выйти</div>
+</div>
