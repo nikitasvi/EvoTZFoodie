@@ -6,4 +6,29 @@ h2 {
 
 .form {
     margin: 40px 0px;
+
+    .property {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 80px;
+        border-top: 1px solid #E5E7EB;
+        border-bottom: 1px solid #E5E7EB;
+
+        .name {
+            min-width: 400px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .input_default {
+            width: 512px;
+            resize: vertical;
+            margin: 20px 0px; 
+
+            &.textarea {
+                min-height: 93px;
+            }
+        }
+    }
 }
