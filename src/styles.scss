@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import '@egjs/flicking/dist/flicking.css';
 @import '~normalize.css';
 
 * {
@@ -14,6 +15,8 @@
 	h1 {
 		font-weight: 600;
 		font-size: 24px;
+		margin: 0;
+		padding: 0;
 	}
 }
 

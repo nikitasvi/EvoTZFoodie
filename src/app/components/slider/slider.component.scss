@@ -1,0 +1,35 @@
+.panel {
+    margin: 100px 0px 0px 0px;
+    min-width: 1280px;
+    height: 640px;
+    border-radius: 50px;
+    background-color: #E7FAFE;
+    margin-right: 60px;
+
+    display: grid;
+    grid-template-columns: 620px 660px;
+
+    .right_side {
+        margin: 50px 0px 50px 45px;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            font-size: 60px;
+            font-weight: 600;
+        }
+    }
+
+    img {
+        width: 660px;
+        height: 640px;
+        object-fit: cover;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+}

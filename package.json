@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@auth0/angular-jwt": "^5.1.2",
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/ngx-flicking": "^4.11.0",
     "@ngxs/storage-plugin": "^3.8.1",
     "@ngxs/store": "^3.8.1",
     "jwt-decode": "^3.1.2",

@@ -23,6 +23,8 @@ import { UsersService } from './services/users.service';
 import { RecipesService } from './services/recipes.service';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { EditRecipeComponent } from './components/admin/recipes/edit-recipe/edit-recipe.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { NgxFlickingModule } from '@egjs/ngx-flicking';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { EditRecipeComponent } from './components/admin/recipes/edit-recipe/edit
     RecipeComponent,
     RecipeFormComponent,
     EditRecipeComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedCommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxFlickingModule,
   ],
   providers: [
     ApiClient,
