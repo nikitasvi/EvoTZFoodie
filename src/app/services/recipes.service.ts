@@ -12,4 +12,8 @@ export class RecipesService {
     public getRecipes() {
         return this.apiClient.get<IRecipe[]>('posts');
     }
+
+    public getRecipe(id: number) {
+        return this.apiClient.get<IRecipe>(`posts/${id}`)
+    }
 }

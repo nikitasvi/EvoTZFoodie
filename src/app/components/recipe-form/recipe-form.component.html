@@ -1,32 +1,75 @@
-<form class="form">
-    <div class="basic_information">
-        <h2>Основная информация</h2>
-        <div class="property">
-            <div class="name">Название рецепта</div>
-            <input class="input_default">
-        </div>
-        <div class="property">
-            <div class="name">Краткое описание</div>
-            <textarea class="input_default textarea"></textarea>
-        </div>
-        <div class="property">
-            <div class="name">Фотография</div>
-            <input class="input_default">
-        </div>
+<form class="form" [formGroup]="recipeForm">
+  <div class="basic_information">
+    <div class="section underline">
+      <h2>Основная информация</h2>
     </div>
-    <div class="additional_information">
-        <h2>Дополнительная иноформация</h2>
-        <div class="property">
-            <div class="name"></div>
-            <input class="input_default">
-        </div>
-        <div class="property">
-            <div class="name"></div>
-            <input class="input_default">
-        </div>
-        <div class="property">
-            <div class="name"></div>
-            <input class="input_default">
-        </div>
+    <div class="property underline">
+      <div class="name">Название рецепта</div>
+      <input class="input input_extend" formControlName="title"/>
     </div>
+    <div class="property underline">
+      <div class="name">Краткое описание</div>
+      <textarea class="input input_extend textarea" formControlName="body"></textarea>
+    </div>
+    <div class="property underline">
+      <div class="name">Фотография</div>
+      <input class="input input_extend" formControlName="image"/>
+    </div>
+  </div>
+  <div class="additional_information">
+    <div class="section underline">
+      <h2>Дополнительная информация</h2>
+    </div>
+    <div class="property underline">
+      <div class="name">Категория</div>
+      <input class="input input_default" formControlName="tags"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Время приготовления</div>
+      <input class="input input_default" formControlName="timeCooking"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Первый ингридиент</div>
+      <input class="input input_extend" formControlName="ingredient"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Белки</div>
+      <input class="input input_extend" formControlName="belki"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Жиры</div>
+      <input class="input input_default" formControlName="fats"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Углеводы</div>
+      <input class="input input_default" formControlName="carbohydrates"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Калории</div>
+      <input class="input input_default" formControlName="calories"/>
+    </div>
+  </div>
+  <div class="detail-information">
+    <div class="section underline">
+      <h2>Детальная информация</h2>
+      <p style="color: rgba(107, 114, 128, 1)">
+        Детально опишите первый шаг вашего рецепта
+      </p>
+    </div>
+    <div class="property underline">
+      <div class="name">Калории</div>
+      <input class="input input_default" placeholder="Разогреть сковородку" formControlName="firstStep"/>
+    </div>
+    <div class="property underline">
+      <div class="name">Калории</div>
+      <textarea
+        class="input input_extend textarea"
+        placeholder="Разогреть сковородку. Затем положить туда репчатый лук"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="submit">
+        <button type="submit" class="btn primary">Редактировать этот рецепт</button>
+    </div>
+  </div>
 </form>
