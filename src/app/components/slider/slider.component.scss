@@ -1,5 +1,5 @@
 .panel {
-    margin: 100px 0px 0px 0px;
+    margin: 100px 0px 100px 0px;
     min-width: 1280px;
     height: 640px;
     border-radius: 50px;
@@ -10,22 +10,110 @@
     grid-template-columns: 620px 660px;
 
     .right_side {
-        margin: 50px 0px 50px 45px;
+        margin: 50px 50px 50px 45px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         h1 {
-            margin: 0;
-            padding: 0;
+            font-weight: 600;
+            font-size: 60px;
+            letter-spacing: -4px;
         }
         
         .header {
             font-size: 60px;
             font-weight: 600;
         }
+
+        .description {
+            margin-top: 30px;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 16px;
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            color: rgba(0, 0, 0, 0.6);
+
+            font-weight: 500;
+
+            .properties {
+                display: flex;
+                justify-content: flex-start;
+                gap: 16px;
+
+                .property {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+    
+                    padding: 9px 16px;
+                    background-color: rgba(0, 0, 0, 0.05);
+                    border-radius: 30px;
+                }
+            }
+
+
+            .author {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .user {
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 16px;
+
+                    .avatar {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        gap: 8px;
+
+                        .name {
+                            font-weight: 700;
+                            color: black;
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                .btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 19px;
+                    
+                    height: 60px;
+                    border-radius: 16px;
+                    padding: 18px 37px;
+
+                    &.black {
+                        background-color: rgba(0, 0, 0, 1);
+                        color: rgba(255, 255, 255, 1);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
     }
 
-    img {
+    .preview {
         width: 660px;
         height: 640px;
         object-fit: cover;

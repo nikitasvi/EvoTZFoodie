@@ -1,18 +1,38 @@
-<ngx-flicking class="flicking" [options]="{ circular: true }">
-    <div flicking-panel class="panel">
+<ngx-flicking class="flicking" [options]="{ circular: true }" [plugins]="plugins">
+    <div flicking-panel class="panel" *ngFor="let recipe of recipes">
         <div class="right_side">
-            <h1 class="header">Курица с томатным соусом</h1>
-            <div class="description">
-                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim 
+            <div class="top">
+                <h1 class="header">{{ recipe.title }}</h1>
+                <p class="description">{{ recipe.body }}</p>
+            </div>
+            <div class="bottom">
+                <div class="properties">
+                    <div class="property">
+                        <img class="icon" src="/assets/images/timer.svg">
+                        <p>{{ recipe.timeCooking }} минут</p>
+                    </div>
+                    <div class="property">
+                        <img class="icon" src="/assets/images/fork-knife.svg">
+                        <p>{{ recipe.tags }}</p>
+                    </div>
+                </div>
+                <div class="author">
+                    <div class="user">
+                        <img class="avatar" [src]="recipe.user.image">
+                        <div class="info">
+                            <p class="name">{{ recipe.user.name }}</p>
+                            <p class="time">{{ recipe.user.date | date: 'dd MMMM y'}}</p>
+                        </div>
+                    </div>
+                    <button class="btn black">
+                        <p>Посмотреть</p>
+                        <img src="/assets/images/play-circle.svg">
+                    </button>
+                </div>
             </div>
         </div>
         <div class="left_side">
-            <img src="https://ea-backend.wckz.space/dist/assets/image/image_1.png">
+            <img class="preview" [src]="recipe.image">
         </div>
     </div>
-    <div flicking-panel class="panel">2</div>
-    <div flicking-panel class="panel">3</div>
-    <div flicking-panel class="panel">4</div>
-    <div flicking-panel class="panel">5</div>
-    <div flicking-panel class="panel">6</div>
 </ngx-flicking>
