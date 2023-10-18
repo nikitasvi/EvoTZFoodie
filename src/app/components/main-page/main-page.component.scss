@@ -15,17 +15,41 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin: 16px;
+                width: 400px;
 
 
                 border-radius: 30px;
                 background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #E7F9FD 100%);
+
+                .content {
+                    margin: 16px;
+                }
 
                 .img {
                     width: 368px;
                     height: 250px;
                     border-radius: 30px;
                     background-color: lightgreen;
+                }
+
+                .title {
+                    margin: 24px 8px;
+                }
+                .properties {
+                    display: flex;
+                    column-gap: 17px;
+                    margin: 0px 8px 16px 8px;
+
+                    .property {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        
+                        p {
+                            color: #00000099;
+                            font-weight: 500;
+                        }
+                    }
                 }
             }
         }
