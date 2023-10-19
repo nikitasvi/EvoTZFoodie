@@ -21,10 +21,14 @@ import { RecipeComponent } from './components/admin/recipes/recipe.component';
 import { ApiClient } from './services/api.client';
 import { UsersService } from './services/users.service';
 import { RecipesService } from './services/recipes.service';
-import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
+import { RecipeFormComponent } from './components/recipe/recipe-form/recipe-form.component';
 import { EditRecipeComponent } from './components/admin/recipes/edit-recipe/edit-recipe.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
+import { NgxsModule } from '@ngxs/store';
+import { RecipeState } from './states/like.state';
+import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import { NgxFlickingModule } from '@egjs/ngx-flicking';
     RecipeFormComponent,
     EditRecipeComponent,
     SliderComponent,
+    RecipeCardComponent,
+    RecipeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,7 @@ import { NgxFlickingModule } from '@egjs/ngx-flicking';
     HttpClientModule,
     ReactiveFormsModule,
     NgxFlickingModule,
+    NgxsModule.forRoot([RecipeState]),
   ],
   providers: [
     ApiClient,

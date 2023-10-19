@@ -1,31 +1,60 @@
-<app-slider></app-slider>
+<app-slider [recipes]="favoriteRecipes"></app-slider>
 <div class="container">
-  <div class="best_recipes">
-    <h1>Лучшие рецепты</h1>
-    <p class="description">
-      На нашем сайте вы найдете лучшие рецепты, которые помогут вам создавать
-      великолепные блюда и порадовать своих близких и гостей своим кулинарным
-      мастерством.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <div class="content">
-          <div class="img"></div>
-          <h1 class="title">Большой и сочный чизбургер из говядины</h1>
-          <div class="properties">
-            <div class="property">
-              <img class="icon" src="/assets/images/timer.svg" />
-              <p>30 минут</p>
-            </div>
-            <div class="property">
-              <img class="icon" src="/assets/images/fork-knife.svg" />
-              <p>Kyritsya</p>
-            </div>
-          </div>
+    <section class="best_recipes">
+        <div class="top">
+            <h1 class="header">Лучшие рецепты</h1>
+            <p class="description">
+                На нашем сайте вы найдете лучшие рецепты, которые помогут вам создавать
+                великолепные блюда и порадовать своих близких и гостей своим кулинарным
+                мастерством.
+            </p>
         </div>
-      </div>
-      <div class="card">dasda</div>
-      <div class="card">dasda</div>
-    </div>
-  </div>
+        <div class="cards">
+            <ng-container *ngFor="let randomRecipe of randomRecipes">
+                <app-recipe-card [recipe]="randomRecipe"></app-recipe-card>
+            </ng-container>
+        </div>
+        <div class="load_more">
+            <div class="btn outline" (click)="loadMoreRecipes()" *ngIf="showMoreButton">
+                Посмотреть еще
+            </div>
+        </div>
+    </section>
+    <section class="recomended_recipes">
+        <h1>Попробуйте эти вкусные рецепты</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+    </section>
+    <section class="why_us">
+        <h1 class="header">Почему именно мы?</h1>
+        <div class="points">
+            <div class="point" *ngFor="let point of whyUsPoints">
+                <img class="check" src="/assets/images/check.svg">
+                <div class="data">
+                    <h3 class="name">{{ point.name }}</h3>
+                    <p class="description">{{ point.body }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="subscribe">
+        <div class="content">
+            <div class="text">
+                <h1 class="title">Хотите получать новые рецепты?</h1>
+                <p class="description">Не пропустите ни одного вкусного рецепта! Подпишитесь на нашу рассылку, чтобы получать новые кулинарные идеи и рецепты прямо в свою почту.</p>
+            </div>
+            <div class="email_form">
+                <input class="input" type="email" placeholder="Введите ваш email...">
+                <button class="btn primary">Подписаться</button>
+            </div>
+        </div>
+    </section>
 </div>
+<section class="notification">
+    <div class="content">
+        <div class="info">
+            <img src="/assets/images/rupor.svg">
+            <p class="text">Хорошие новости! Мы открыли наш интернет-магазин</p>
+        </div>
+        <img class="close" src="/assets/images/close.svg">
+    </div>
+</section>
