@@ -10,8 +10,8 @@
             </p>
         </div>
         <div class="cards">
-            <ng-container *ngFor="let randomRecipe of randomRecipes">
-                <app-recipe-card [recipe]="randomRecipe"></app-recipe-card>
+            <ng-container *ngFor="let recipe of bestRecipes">
+                <app-recipe-card [recipe]="recipe"></app-recipe-card>
             </ng-container>
         </div>
         <div class="load_more">
@@ -20,9 +20,16 @@
             </div>
         </div>
     </section>
-    <section class="recomended_recipes">
-        <h1>Попробуйте эти вкусные рецепты</h1>
-        <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+    <section class="recommended_recipes">
+      <div class="info">
+        <h1 class="header">Попробуйте эти вкусные рецепты</h1>
+        <p class="text">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+      </div>
+      <div class="list">
+        <ng-container *ngFor="let recipe of recommendedRecipes">
+          <app-recipe-card [recipe]="recipe"></app-recipe-card>
+      </ng-container>
+      </div>
     </section>
     <section class="why_us">
         <h1 class="header">Почему именно мы?</h1>

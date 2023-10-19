@@ -29,6 +29,7 @@ import { NgxsModule } from '@ngxs/store';
 import { RecipeState } from './states/like.state';
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
     SliderComponent,
     RecipeCardComponent,
     RecipeListComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

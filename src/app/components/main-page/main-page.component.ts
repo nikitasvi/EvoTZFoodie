@@ -13,11 +13,11 @@ import { AddLike, RecipeState, UnlikePost } from 'src/app/states/like.state';
 export class MainPageComponent {
   public recipes: IRecipe[] = [];
   public favoriteRecipes: IRecipe[] = [];
-  public randomRecipes: IRecipe[] = [];
+  public bestRecipes: IRecipe[] = [];
+  public recommendedRecipes: IRecipe[] = [];
   public whyUsPoints: IDetail[] = [];
 
-  private displayedRecipeIds: Set<number> = new Set();
-  private displayedRecipeCount = 3;
+  private randomRecipesIndexes: number[] = [];
   public showMoreButton = true;
 
   constructor(
@@ -26,40 +26,31 @@ export class MainPageComponent {
     this.recipeService.getRecipes().subscribe((recipes) => {
       this.recipes = recipes;
       this.favoriteRecipes = recipes.filter((recipe) => recipe.favorite === true);
-      this.getNoRepeatRandomRecipes();
+      this.getRandomRecipes(this.bestRecipes, 3, this.randomRecipesIndexes);
+      this.getRandomRecipes(this.recommendedRecipes, 4);
     })
 
     this.initPoints();
   }
 
   public loadMoreRecipes() {
-    this.getNoRepeatRandomRecipes();
+    this.getRandomRecipes(this.bestRecipes, 6, this.randomRecipesIndexes);
     this.showMoreButton = false;
   }
 
-  private getNoRepeatRandomRecipes() {
-    while (this.randomRecipes.length < this.displayedRecipeCount) {
+  public getRandomRecipes(arr: IRecipe[], count: number, indexes: number[] = []): IRecipe[] {
+    while (indexes.length < count) {
       const randomIndex = Math.floor(Math.random() * this.recipes.length);
-      const randomRecipe = this.recipes[randomIndex];
       
-      if (!this.displayedRecipeIds.has(randomRecipe.id)) {
-        this.randomRecipes.push(randomRecipe);
-        this.displayedRecipeIds.add(randomRecipe.id);
+      if (!indexes.includes(randomIndex)) {
+        indexes.push(randomIndex);
+
+        const randomRecipe = this.recipes[randomIndex];
+        arr.push(randomRecipe);
       }
     }
-    this.displayedRecipeCount += this.displayedRecipeCount;
-  }
 
-  public getRandomRecipes(): IRecipe[] {
-    let randomRecipes: IRecipe[] = [];
-
-    for (let i = 0; i < 4; i++) {
-      const randomIndex = Math.floor(Math.random() * this.recipes.length);
-      const randomRecipe = this.recipes[randomIndex];
-      randomRecipes.push(randomRecipe);
-    }
-    console.log('randomRecipes', randomRecipes);
-    return randomRecipes;
+    return arr;
   }
 
   private initPoints() {

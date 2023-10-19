@@ -8,10 +8,13 @@ import {
 import { Observable } from 'rxjs';
 import { LoginService } from '../services/login.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private readonly loginService: LoginService,
+    private readonly router: Router) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -19,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     // Получить текущий JWT-токен из AuthService
     const token = localStorage.getItem('access_token');
-
+    console.log(token);
     // Проверить, что токен существует и не истек
     if (token) {
       if (this.isTokenExpired(token)) {
@@ -31,6 +34,7 @@ export class TokenInterceptor implements HttpInterceptor {
         localStorage.removeItem('role');
         localStorage.removeItem('fullName');
         localStorage.removeItem('username');
+        this.router.navigate(['**'], { queryParams: { errorType: 'unauthorized' } }); // Замените '401' на нужный вам код ошибки
       } else {
         // Если токен действителен, добавьте его к заголовкам запроса
         request = request.clone({
@@ -40,7 +44,6 @@ export class TokenInterceptor implements HttpInterceptor {
         });
       }
     }
-
     return next.handle(request);
   }
 
