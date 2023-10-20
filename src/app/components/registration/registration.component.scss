@@ -1,45 +1,53 @@
 .register_main {
-    height: calc(100vh - 230px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: calc(100vh - 230px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
-    font-weight: 800;
-    font-size: 30px;
-    margin-bottom: 32px;
+  font-weight: 800;
+  font-size: 30px;
+  margin-bottom: 32px;
 }
 
 .btn {
-    border-radius: 6px;
+  border-radius: 6px;
 }
 
 .form {
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-    
-    width: 448px;
-    border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 
-    font-weight: 500;
-    padding: 32px 40px;
+  width: 448px;
+  border-radius: 8px;
 
-    &_content {
-        display: flex;
-        flex-direction: column;
+  font-weight: 500;
+  padding: 32px 40px;
 
-        .form_row {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 24px;
+  &_content {
+    display: flex;
+    flex-direction: column;
 
-            .label {
-                font-weight: 500;
-                font-size: 14px;
-                margin-bottom: 4px;
-            }
-        }
+    .form_row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      .label {
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
     }
+  }
+
+  .has-error {
+    border: 1px solid red;
+  }
+
+  .disabled_button {
+    opacity: 0.6;
+  }
 }

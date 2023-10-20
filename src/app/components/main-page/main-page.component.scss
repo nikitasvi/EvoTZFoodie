@@ -1,243 +1,240 @@
 .container {
-    margin: 50px 80px;
+  margin: 50px 80px;
 
-    // --- best recipes section ---
-    .best_recipes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 50px 0px 100px 0px;
+  // --- best recipes section ---
+  .best_recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0px 100px 0px;
 
-        .top {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-            .header {
-                font-size: 48px;
-                letter-spacing: -4px;
-            }
-    
-            .description {
-                text-align: center;
+      .header {
+        font-size: 48px;
+        letter-spacing: -4px;
+      }
 
-                width: 700px;
-                margin: 24px 0px 68px 0px;
-     
-                color: rgba(96, 96, 96, 1);
-                line-height: 28px;
-                font-size: 16px;
-            }
-        }
+      .description {
+        text-align: center;
 
+        width: 700px;
+        margin: 24px 0px 68px 0px;
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .load_more {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-    
-            margin-top: 75px;
-    
-            .btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-        
-                width: 185px;
-                height: 50px;
-        
-                color: #000;
-                font-weight: 500;
-                font-size: 16px;
-                border-radius: 6px;
-                cursor: pointer;
-                
-                &.outline {
-                    border: 1px solid rgba(55, 65, 81, 1);
-                }
-            }
-        }
+        color: rgba(96, 96, 96, 1);
+        line-height: 28px;
+        font-size: 16px;
+      }
     }
 
-    // --- recommended recipes section ---
-    .recommended_recipes {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(400px, 1fr));
+      gap: 40px;
+    }
+
+    .load_more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 75px;
+
+      .btn {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
 
-        .info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            column-gap: 100px;
+        width: 185px;
+        height: 50px;
 
-            .header {
-                margin-left: 32px;
-                font-weight: 600;
-                font-size: 48px;
-                letter-spacing: -2px;
-            }
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
 
-            .text {
-                font-size: 16px;
-                color: #00000099;
-                max-width: 620px;
-            }
+        &.outline {
+          border: 1px solid rgba(55, 65, 81, 1);
         }
+      }
+    }
+  }
 
-        .list {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            column-gap: 40px;
-            padding: 80px 0px 150px 0px;
+  // --- recommended recipes section ---
+  .recommended_recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-            &::ng-deep {
-                .card {
-                    width: 290px;
-                    background: unset;
+    .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 100px;
 
-                    .img {
-                        width: 290px;
-                        height: 200px;
-                    }
-                }
-            }
-        }
+      .header {
+        margin-left: 32px;
+        font-weight: 600;
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .text {
+        font-size: 16px;
+        color: #00000099;
+        max-width: 620px;
+      }
     }
 
-    // --- why us section ---
-    .why_us {
+    .list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      column-gap: 40px;
+      padding: 80px 0px 150px 0px;
+
+      &::ng-deep {
+        .card {
+          width: 290px;
+          background: unset;
+
+          .img {
+            width: 290px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  // --- why us section ---
+  .why_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+      font-size: 36px;
+      font-weight: 800;
+    }
+
+    .points {
+      display: flex;
+      justify-content: center;
+      column-gap: 32px;
+      margin: 48px 32px 75px 32px;
+
+      .point {
+        width: 280px;
+        display: flex;
+
+        .check {
+          width: 24px;
+          height: 24px;
+          margin-right: 12px;
+        }
+
+        .data {
+          display: flex;
+          flex-direction: column;
+
+          .name {
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  // --- email subscribe section ---
+  .subscribe {
+    background-color: rgba(231, 249, 253, 1);
+    border-radius: 24px;
+    min-height: 264px;
+
+    .content {
+      display: flex;
+      column-gap: 32px;
+      padding: 80px;
+
+      .text {
         display: flex;
         flex-direction: column;
+        row-gap: 12px;
+        max-width: 680px;
+
+        .title {
+          font-weight: 700;
+          font-size: 30px;
+        }
+      }
+
+      .email_form {
+        display: flex;
+        justify-content: center;
         align-items: center;
+        column-gap: 12px;
 
-        .header {
-            font-size: 36px;
-            font-weight: 800;
+        .input {
+          height: 50px;
+          width: 281px;
+          background-color: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(255, 255, 255, 1);
         }
 
-        .points {
-            display: flex;
-            justify-content: center;
-            column-gap: 32px;
-            margin: 48px 32px 75px 32px;
-
-            .point {
-                width: 280px;
-                display: flex;
-
-                .check {
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 12px;
-                }
-
-                .data {
-                    display: flex;
-                    flex-direction: column;
-
-                    .name {
-                        font-weight: 500;
-                        font-size: 18px;
-                        margin-bottom: 8px;
-                    }
-
-
-                }
-            }
+        .btn {
+          height: 50px;
         }
+      }
     }
-
-    // --- email subscribe section ---
-    .subscribe {
-        background-color: rgba(231, 249, 253, 1);
-        border-radius: 24px;
-        min-height: 264px;
-
-        .content {
-            display: flex;
-            column-gap: 32px;
-            padding: 80px;
-
-            .text {
-                display: flex;
-                flex-direction: column;
-                row-gap: 12px;
-                max-width: 680px;
-
-                .title {
-                    font-weight: 700;
-                    font-size: 30px;
-                }
-            }
-
-            .email_form {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                column-gap: 12px;
-
-                .input {
-                    height: 50px;
-                    width: 281px;
-                    background-color: rgba(255, 255, 255, 1);
-                    border: 1px solid rgba(255, 255, 255, 1);
-                }
-
-                .btn {
-                    height: 50px;
-                }
-            }
-        }
-    }
-} 
+  }
+}
 
 // --- notification ---
 .notification {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 64px;
+  background-color: rgba(58, 51, 149, 1);
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  color: #fff;
+
+  .content {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-
+    padding: 12px 111px;
     width: 100%;
-    min-height: 64px;
-    background-color: rgba(58, 51, 149, 1);
-    position: fixed;
-    bottom: 0;
-    z-index: 100;
-    color: #FFF;
 
-    .content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 111px;
-        width: 100%;
+    .info {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
 
-        .info {
-            display: flex;
-            align-items: center;
-            column-gap: 12px;
-
-            .text {
-                font-size: 16px;
-                font-weight: 500;
-            }
-        }
-
-        .close {
-            cursor: pointer;
-        }
+      .text {
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
+
+    .close {
+      cursor: pointer;
+    }
+  }
 }
 
 .description {
-    color: rgba(107, 114, 128, 1);
-    font-size: 16px;
-    line-height: 24px;
+  color: rgba(107, 114, 128, 1);
+  font-size: 16px;
+  line-height: 24px;
 }

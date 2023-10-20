@@ -9,6 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  public isSubmitted = false;
   public loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -16,21 +17,20 @@ export class LoginComponent {
 
   constructor(
     private readonly router: Router,
-    private readonly loginService: LoginService) {
-
-    }
+    private readonly loginService: LoginService
+  ) {}
 
   public submitForm() {
     if (this.loginForm.invalid) {
+      this.isSubmitted = true;
       return;
     }
 
     const username = this.loginForm.controls.username.value;
     const password = this.loginForm.controls.password.value;
 
-    this.loginService.login(username, password)
-      .subscribe((response) => {
-        this.router.navigate(['/']);
-      });
+    this.loginService.login(username, password).subscribe((response) => {
+      this.router.navigate(['/']);
+    });
   }
 }

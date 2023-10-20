@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-error-page',
   templateUrl: './error-page.component.html',
-  styleUrls: ['./error-page.component.scss']
+  styleUrls: ['./error-page.component.scss'],
 })
 export class ErrorPageComponent {
   public errorType: ErrorType = 'not-found';
@@ -12,8 +12,9 @@ export class ErrorPageComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.errorType = params['errorType'];
+      console.log(this.errorType);
     });
   }
 }

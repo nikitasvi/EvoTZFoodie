@@ -8,7 +8,7 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss', '../_admin.scss']
 })
-export class RecipeComponent {
+export class RecipeAdminComponent {
   public currentTab: TabType = 'recipes';
   public recipes: IRecipe[] = [];
 

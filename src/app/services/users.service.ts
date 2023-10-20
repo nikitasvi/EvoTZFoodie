@@ -6,10 +6,13 @@ import { IUser } from '../models/User';
   providedIn: 'root',
 })
 export class UsersService {
-    constructor(
-        private readonly apiClient: ApiClient) {}
+  constructor(private readonly apiClient: ApiClient) {}
 
-    public getUsers() {
-        return this.apiClient.get<IUser[]>('users');
-    }
+  public getUsers() {
+    return this.apiClient.get<IUser[]>('users');
+  }
+
+  public getUser(id: number) {
+    return this.apiClient.get<IUser>(`users/${id}`);
+  }
 }

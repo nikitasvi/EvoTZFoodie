@@ -1,0 +1,146 @@
+<div class="container">
+  <section class="top">
+    <div class="header">
+      <h1 class="title">{{ recipe?.title }}</h1>
+      <div class="info">
+        <div class="author">
+          <img class="avatar" [src]="recipe?.user?.image" />
+          <div class="content">
+            <p class="name">{{ recipe?.user?.name }}</p>
+            <p class="date">{{ recipe?.user?.date | date : "dd MMMM y" }}</p>
+          </div>
+        </div>
+        <div class="time_cooking">
+          <img class="timer" src="/assets/images/timer.svg" />
+          <div class="cooking_info">
+            <p>ВРЕМЯ ПРИГОТОВЛЕНИЯ</p>
+            <p class="time">{{ recipe?.timeCooking }} минут</p>
+          </div>
+        </div>
+        <div class="type">
+          <img class="icon" src="/assets/images/fork-knife.svg" />
+          <p>{{ recipe?.tags }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="button" onClick="window.print()">
+        <div class="image">
+          <img src="/assets/images/printer.svg" />
+        </div>
+        <p class="name">{{ "Распечатать" | uppercase }}</p>
+      </div>
+      <div class="button" (click)="openShareDialog()">
+        <div class="image">
+          <img src="/assets/images/share.svg" />
+        </div>
+        <p class="name">{{ "Поделиться" | uppercase }}</p>
+      </div>
+    </div>
+  </section>
+  <section class="description">
+    <div class="information">
+      <img class="image" [src]="recipe?.image" />
+      <div class="content">
+        <div class="stats">
+          <h1 class="title">Пищевая ценность</h1>
+          <div class="stat">
+            <p class="name">Калории</p>
+            <p class="value">{{ recipe?.foodValue?.calories }} ккал</p>
+          </div>
+          <div class="stat">
+            <p class="name">Жиры</p>
+            <p class="value">{{ recipe?.foodValue?.fats }} г</p>
+          </div>
+          <div class="stat">
+            <p class="name">Углеводы</p>
+            <p class="value">{{ recipe?.foodValue?.carbohydrates }} г</p>
+          </div>
+          <div class="stat">
+            <p class="name">Белки</p>
+            <p class="value">{{ recipe?.foodValue?.belki }} г</p>
+          </div>
+          <p class="notify">Значения приблизительные</p>
+        </div>
+      </div>
+    </div>
+    <div class="text">
+      {{ recipe?.body }}
+    </div>
+  </section>
+  <section class="ingredients_others-recipes">
+    <div class="ingredients">
+      <h1 class="title">Ингредиенты</h1>
+      <p class="description">Что вам пригодиться</p>
+      <div class="list">
+        <ng-container
+          *ngFor="let ingredient of recipe?.additionalInformation?.ingredients"
+        >
+          <div class="check">
+            <input type="checkbox" id="ingredient" class="custom-checkbox" />
+            <label for="ingredient" class="label">{{ ingredient }}</label>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="other_recipes">
+      <h1 class="title">Прочие рецепты</h1>
+      <ng-container *ngFor="let recipe of otherRecipes">
+        <div class="card" [routerLink]="['/recipe', recipe.id]">
+          <img [src]="recipe?.image" class="image" />
+          <div class="info">
+            <h1 class="title">{{ recipe?.title }}</h1>
+            <p class="body">{{ recipe?.body }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+  <section class="cooking_steps">
+    <h1 class="title">Шаги приготовления</h1>
+    <div class="steps">
+      <div
+        class="step"
+        *ngFor="
+          let step of recipe?.additionalInformation?.details;
+          let i = index
+        "
+      >
+        <input type="checkbox" id="step" class="custom-checkbox" />
+        <label for="step" class="label">
+          <div for="step" class="title">{{ i + 1 + ". " + step.title }}</div>
+          <div class="body">{{ step.body }}</div>
+        </label>
+      </div>
+    </div>
+  </section>
+  <section class="see_also">
+    <h1 class="title">Возможно вам понравятся эти рецепты</h1>
+    <div class="recipes">
+      <ng-container *ngFor="let recipe of seeAlso">
+        <app-recipe-card [recipe]="recipe"></app-recipe-card>
+      </ng-container>
+    </div>
+  </section>
+  <section class="comments">
+    <p style="color: red; font-size: 20px; margin: 20px 0px">
+      В рецепт приходят коменты, в которых нет аватара пользователя,<br />
+      страница доступна ГОСТЯМ, а запрос на получение пользователя<br />
+      где можно было бы взять аватар <br />
+      доступен только если ты АВТОРИЗОВАН
+    </p>
+    <h1 class="title">Комментарии</h1>
+    <div class="comment" *ngFor="let comment of recipe?.comments">
+      <div class="user">
+        <img class="avatar" />
+        <div class="info">
+          <p class="name">{{ comment?.user?.username }}</p>
+          <p class="date">
+            {{ comment?.dateCreated | date : "dd.MM.yy HH:mm" }}
+          </p>
+        </div>
+      </div>
+      <p class="body">{{ comment?.body }}</p>
+    </div>
+  </section>
+</div>

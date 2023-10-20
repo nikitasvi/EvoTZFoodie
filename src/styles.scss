@@ -1,53 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import '@egjs/flicking/dist/flicking.css';
-@import '~normalize.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "@egjs/flicking/dist/flicking.css";
+@import "~normalize.css";
 
 * {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-	font-size: 14px;
-	border: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
 
-	a {
-		text-decoration: none;
-		color: black;
-	}
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
-	h1 {
-		font-weight: 600;
-		font-size: 24px;
-	}
+  h1 {
+    font-weight: 600;
+    font-size: 24px;
+  }
 
-	h1, h2, h3, h4, h5, h6, P {
-		margin: 0;
-		padding: 0;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  P {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 body {
-	min-width: 1440px;
+  min-width: 1440px;
 }
 
 .btn {
-	height: 38px;
-	font-size: 14px;
-	cursor: pointer;
-	
-	&.primary {
-		background-color: #3A3395;
-		border-radius: 8px;
-		padding: 9px 31.5px;
-		color: #FFF;
-	}
+  height: 38px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.primary {
+    background-color: #3a3395;
+    border-radius: 8px;
+    padding: 9px 31.5px;
+    color: #fff;
+  }
+}
+
+.disabled_button {
+  opacity: 0.6;
+}
+
+.nx-message-icon {
+  width: 18px !important;
+  height: 18px !important;
+  color: green !important;
+  margin-left: 16px !important;
+}
+
+.nx-message {
+  &.nx-with-icon {
+    font-weight: 500 !important;
+  }
+}
+
+.notiflix-notify.notiflix-notify-success.nx-with-animation.nx-with-icon.nx-fade {
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
 }
 
 .input {
-	height: 38px;
-	padding: 0px 13px;
-	font-size: 14px;
+  height: 38px;
+  padding: 0px 13px;
+  font-size: 14px;
 
-    border-radius: 6px;
-	border: 1px solid rgba(209, 213, 219, 1);
-	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

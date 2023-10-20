@@ -1,23 +1,39 @@
 <div class="register_main">
-    <div class="header">
-        Зарегистрируйте ваш аккаунт
-    </div>
-    <div class="form">
-        <form>
-            <div class="form_content">
-                <div class="form_row">
-                    <label class="label">Логин</label>
-                    <input class="input">
-                </div>
-                <div class="form_row">
-                    <label class="label">Пароль</label>
-                    <input class="input">
-                </div>
-                <div class="form_row">
-                    <a routerLink=""></a>
-                </div>
-                <button type="submit" class="btn primary">Зарегистрироваться</button>
-            </div>
-        </form>
-    </div>
+  <div class="header">Зарегистрируйте ваш аккаунт</div>
+  <div class="form" [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+    <form>
+      <div class="form_content">
+        <div class="form_row">
+          <label class="label">Логин</label>
+          <input
+            class="input"
+            type="text"
+            formControlName="login"
+            [ngClass]="{ 'has-error': registrationForm.get('login')?.invalid }"
+          />
+        </div>
+        <div class="form_row">
+          <label class="label">Пароль</label>
+          <input
+            class="input"
+            type="password"
+            formControlName="password"
+            [ngClass]="{
+              'has-error': registrationForm.get('password')?.invalid
+            }"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn primary"
+          [ngClass]="{
+            disabled_button: isSubmitted && registrationForm.invalid
+          }"
+          [disabled]="isSubmitted && registrationForm.invalid"
+        >
+          Зарегистрироваться
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

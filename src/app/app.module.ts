@@ -17,7 +17,6 @@ import { RolePipe } from './pipes/role.pipe';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AdminPageComponent } from './components/admin/admin-page/admin-page.component';
 import { UsersComponent } from './components/admin/users/users.component';
-import { RecipeComponent } from './components/admin/recipes/recipe.component';
 import { ApiClient } from './services/api.client';
 import { UsersService } from './services/users.service';
 import { RecipesService } from './services/recipes.service';
@@ -30,6 +29,10 @@ import { RecipeState } from './states/like.state';
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { RecipeAdminComponent } from './components/admin/recipes/recipe.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -43,10 +46,11 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     RolePipe,
     UsersComponent,
     AdminPageComponent,
-    RecipeComponent,
+    RecipeAdminComponent,
     RecipeFormComponent,
     EditRecipeComponent,
     SliderComponent,
+    RecipeComponent,
     RecipeCardComponent,
     RecipeListComponent,
     ErrorPageComponent,
@@ -58,6 +62,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     HttpClientModule,
     ReactiveFormsModule,
     NgxFlickingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     NgxsModule.forRoot([RecipeState]),
   ],
   providers: [

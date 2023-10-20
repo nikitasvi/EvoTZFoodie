@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 
 export class AddLike {
@@ -20,6 +21,7 @@ export class RecipeStateModel {
     likedPosts: [],
   },
 })
+@Injectable()
 export class RecipeState {
   @Action(AddLike)
   addLike(ctx: StateContext<RecipeStateModel>, action: AddLike) {

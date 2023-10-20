@@ -6,14 +6,13 @@ import { IRecipe } from '../models/Recipe';
   providedIn: 'root',
 })
 export class RecipesService {
-    constructor(
-        private readonly apiClient: ApiClient) {}
+  constructor(private readonly apiClient: ApiClient) {}
 
-    public getRecipes() {
-        return this.apiClient.get<IRecipe[]>('posts');
-    }
+  public getRecipes() {
+    return this.apiClient.get<IRecipe[]>('posts');
+  }
 
-    public getRecipe(id: number) {
-        return this.apiClient.get<IRecipe>(`posts/${id}`)
-    }
+  public getRecipe(id: number) {
+    return this.apiClient.get<IRecipe>(`posts/${id}`);
+  }
 }

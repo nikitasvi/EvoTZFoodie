@@ -20,9 +20,11 @@
 </div>
 <div class="menu" *ngIf="isMenuToggled">
   <div class="row without_link">
-    Вы вошли как <b>{{ user.userName }}</b>
+    Вы вошли как <b>{{ user?.userName }}</b>
   </div>
   <div class="row">Настройки аккаунта</div>
-  <div class="row" *ngIf="user.role === 'admin'" routerLink="admin/users">Администрирование</div>
-  <div class="row logout" *ngIf="user.role === 'admin'">Выйти</div>
+  <div class="row" *ngIf="user?.role === 'admin'" routerLink="admin/users">
+    Администрирование
+  </div>
+  <div class="row logout" (click)="this.loginService.logout()">Выйти</div>
 </div>

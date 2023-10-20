@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class PageHeaderComponent implements OnInit {
   public isLoggedIn$!: Observable<boolean>;
-  public user!: Auth;
+  public user: Auth | null = null;
   public isMenuToggled = false;
 
   constructor(public loginService: LoginService) {}
@@ -34,6 +34,6 @@ export class PageHeaderComponent implements OnInit {
   }
 
   public toggleMenu() {
-    return this.isMenuToggled = !this.isMenuToggled;
+    return (this.isMenuToggled = !this.isMenuToggled);
   }
 }

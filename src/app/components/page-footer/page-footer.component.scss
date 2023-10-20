@@ -1,20 +1,20 @@
 .page_footer {
-    height: 120px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #DDDDDD;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #dddddd;
 }
 
 .policy {
-    font-size: 16px;
-    color: #9CA3AF;
+  font-size: 16px;
+  color: #9ca3af;
 }
 
 .social_links {
-    display: flex;
-    
-    .social_link {
-        margin-right: 21px;
-    }
+  display: flex;
+
+  .social_link {
+    margin-right: 21px;
+  }
 }

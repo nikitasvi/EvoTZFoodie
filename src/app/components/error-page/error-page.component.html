@@ -1,23 +1,46 @@
 <div class="error-page">
-    <div class="error">
-        <ng-container *ngIf="errorType === 'not-found'; then NotFoundErrorTemplate else accessDeniedTemplate"></ng-container>
-        <div class="links">
-            <a *ngIf="errorType === 'not-found'" href="javascript:history.back()" class="link">Назад →</a>
-            <a *ngIf="errorType === 'unauthorized'" href="javascript:history.go(-2)" class="link">Назад →</a>
-            <a routerLink="" class="link">На главную →</a>
-        </div>
+  <div class="error">
+    <ng-container
+      *ngIf="
+        errorType === 'not-found';
+        then NotFoundErrorTemplate;
+        else accessDeniedTemplate
+      "
+    ></ng-container>
+    <div class="links">
+      <a
+        *ngIf="errorType === 'not-found'"
+        href="javascript:history.back()"
+        class="link"
+        >Назад →</a
+      >
+      <a
+        *ngIf="errorType === 'unauthorized'"
+        href="javascript:history.go(-2)"
+        class="link"
+        >Назад →</a
+      >
+      <a routerLink="" class="link">На главную →</a>
     </div>
-    <img class="image" src="https://ea-backend.wckz.space/dist/assets/image/image_404.png">
+  </div>
+  <img
+    class="image"
+    src="https://ea-backend.wckz.space/dist/assets/image/image_404.png"
+  />
 </div>
 
 <ng-template #accessDeniedTemplate>
-    <h3 class="type">401 ОШИБКА</h3>
-    <h1 class="header">Доступ запрещен. У вас нет прав на просмотр этого раздела.</h1>
-    <p class="description">У вас нет прав на просмотр этого раздела</p>
+  <h3 class="type">401 ОШИБКА</h3>
+  <h1 class="header">
+    Доступ запрещен. У вас нет прав на просмотр этого раздела.
+  </h1>
+  <p class="description">У вас нет прав на просмотр этого раздела</p>
 </ng-template>
 
 <ng-template #NotFoundErrorTemplate>
-    <h3 class="type">404 ОШИБКА</h3>
-    <h1 class="header">Страница не найдена</h1>
-    <p class="description">К сожалению, мы не смогли найти страницу, которую вы ищете</p>
+  <h3 class="type">404 ОШИБКА</h3>
+  <h1 class="header">Страница не найдена</h1>
+  <p class="description">
+    К сожалению, мы не смогли найти страницу, которую вы ищете
+  </p>
 </ng-template>
