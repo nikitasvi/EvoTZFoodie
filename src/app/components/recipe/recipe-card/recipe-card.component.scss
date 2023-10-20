@@ -1,71 +1,72 @@
 .card {
+  display: flex;
+  width: 400px;
+  height: 100%;
+
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  cursor: pointer;
+
+  .content {
+    margin: 16px;
     display: flex;
-    width: 400px;
-    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    border-radius: 30px;
-    background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #E7F9FD 100%);
-    cursor: pointer;
+  .info {
+    position: relative;
 
-    .content {
-        margin: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .img {
+      width: 368px;
+      height: 250px;
+      border-radius: 30px;
     }
 
-    .info {
-        position: relative;
+    .like {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background-color: #fff;
+      border-radius: 50%;
 
-        .img {
-            width: 368px;
-            height: 250px;
-            border-radius: 30px;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        .like {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 48px;
-            height: 48px;
-            background-color: #FFF;
-            border-radius: 50%;
+      img.liked {
+        filter: invert(80%) sepia(69%) saturate(5827%) hue-rotate(323deg)
+          brightness(104%) contrast(102%);
+      }
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      img.disliked {
+        filter: unset;
+      }
 
-            img.liked {
-                filter: invert(80%) sepia(69%) saturate(5827%) hue-rotate(323deg) brightness(104%) contrast(102%);
-            }
-              
-            img.disliked {
-                filter: unset;
-            }
-            
-            z-index: 100;
-        }
-
-        .title {
-            margin: 24px 8px;
-        }
+      z-index: 100;
     }
 
-    .properties {
-        display: flex;
-        column-gap: 17px;
-        margin: 0px 8px 16px 8px;
-
-        .property {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            
-            p {
-                color: #00000099;
-                font-weight: 500;
-            }
-        }
+    .title {
+      margin: 24px 8px;
     }
+  }
+
+  .properties {
+    display: flex;
+    column-gap: 17px;
+    margin: 0px 8px 16px 8px;
+
+    .property {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      p {
+        color: #00000099;
+        font-weight: 500;
+      }
+    }
+  }
 }

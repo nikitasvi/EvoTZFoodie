@@ -33,7 +33,9 @@ export class RecipeState {
   @Action(UnlikePost)
   unlikePost(ctx: StateContext<RecipeStateModel>, action: UnlikePost) {
     const state = ctx.getState();
-    const likedPosts = state.likedPosts.filter((postId) => postId !== action.postId);
+    const likedPosts = state.likedPosts.filter(
+      (postId) => postId !== action.postId
+    );
     ctx.setState({ likedPosts });
   }
 
@@ -42,5 +44,3 @@ export class RecipeState {
     return state.likedPosts;
   }
 }
-
-

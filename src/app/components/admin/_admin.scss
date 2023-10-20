@@ -1,35 +1,35 @@
 .table {
-    border-radius: 8px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 
-    .header {
-        display: grid;
+  .header {
+    display: grid;
 
-        background-color: rgba(249, 250, 251, 1);
-        border-bottom: 1px solid rgba(229, 231, 235, 1);
+    background-color: rgba(249, 250, 251, 1);
+    border-bottom: 1px solid rgba(229, 231, 235, 1);
 
-        .col {
-            color: rgba(107, 114, 128, 1);
-            font-weight: 500;
-            font-size: 12px;
-            padding: 12px 20px;
-            text-transform: uppercase;
-        }
+    .col {
+      color: rgba(107, 114, 128, 1);
+      font-weight: 500;
+      font-size: 12px;
+      padding: 12px 20px;
+      text-transform: uppercase;
+    }
+  }
+
+  .data {
+    display: grid;
+
+    .row {
+      margin: 16px 24px;
+      color: rgba(107, 114, 128, 1);
+      display: flex;
+      align-items: center;
     }
 
-    .data {
-        display: grid;
-
-        .row {
-            margin: 16px 24px;
-            color: rgba(107, 114, 128, 1);
-            display: flex;
-            align-items: center;
-        }
-
-        .black {
-            color: rgba(17, 24, 39, 1);
-        }
+    .black {
+      color: rgba(17, 24, 39, 1);
     }
+  }
 }

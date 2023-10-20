@@ -14,7 +14,6 @@ export class DeleteDialogComponent {
   ) {}
 
   public confirmDelete() {
-    // Return the result (true or false) to the parent component
     this.dialogRef.close(true);
   }
 

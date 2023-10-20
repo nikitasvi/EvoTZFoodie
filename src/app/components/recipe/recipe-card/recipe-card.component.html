@@ -1,21 +1,24 @@
 <div class="card" [routerLink]="['/recipe', recipe.id]">
-    <div class="content">
-        <div class="info">
-            <img class="img" [src]="recipe.image"/>
-            <div class="like" (click)="likePost(recipe.id); $event.stopPropagation();">
-                <img src="/assets/images/like.svg" [class.liked]="isRecipeLiked(recipe.id)"/>
-            </div>
-            <h1 class="title">{{ recipe.title }}</h1>
-        </div>
-        <div class="properties">
-            <div class="property">
-                <img class="icon" src="/assets/images/timer.svg" />
-                <p>{{ recipe.timeCooking }} минут</p>
-            </div>
-            <div class="property">
-                <img class="icon" src="/assets/images/fork-knife.svg" />
-                <p>{{ recipe.tags }}</p>
-            </div>
-        </div>
+  <div class="content">
+    <div class="info">
+      <img class="img" [src]="recipe.image" />
+      <div class="like" (click)="likePost(recipe.id); $event.stopPropagation()">
+        <img
+          src="/assets/images/like.svg"
+          [class.liked]="isRecipeLiked(recipe.id)"
+        />
+      </div>
+      <h1 class="title">{{ recipe.title }}</h1>
     </div>
+    <div class="properties">
+      <div class="property">
+        <img class="icon" src="/assets/images/timer.svg" />
+        <p>{{ recipe.timeCooking }} минут</p>
+      </div>
+      <div class="property">
+        <img class="icon" src="/assets/images/fork-knife.svg" />
+        <p>{{ recipe.tags }}</p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,27 @@
 <div class="container">
-    <div class="header" *ngIf="!isEditRecipePage">
-        <h1>Панель администрирования</h1>
-        <div class="tabs">
-            <a class="tab" [ngClass]="{'active': tab === 'users'}" routerLink="users" (click)="switchTab('users')">
-                Управление пользователями
-            </a>
-            <a class="tab" [ngClass]="{'active': tab === 'recipes'}" routerLink="recipes" (click)="switchTab('recipes')">
-                Управление рецептами
-            </a>
-        </div>
+  <div class="header" *ngIf="!isEditRecipePage">
+    <h1>Панель администрирования</h1>
+    <div class="tabs">
+      <a
+        class="tab"
+        [ngClass]="{ active: tab === 'users' }"
+        routerLink="users"
+        (click)="switchTab('users')"
+      >
+        Управление пользователями
+      </a>
+      <a
+        class="tab"
+        [ngClass]="{ active: tab === 'recipes' }"
+        routerLink="recipes"
+        (click)="switchTab('recipes')"
+      >
+        Управление рецептами
+      </a>
     </div>
-   
-    <div class="panel">
-        <router-outlet></router-outlet>
-    </div>
+  </div>
+
+  <div class="panel">
+    <router-outlet></router-outlet>
+  </div>
 </div>

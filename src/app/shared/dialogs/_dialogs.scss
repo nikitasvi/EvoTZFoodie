@@ -1,66 +1,66 @@
 .dialog {
-    border-radius: 50%;
+  border-radius: 50%;
 
-    .info {
-        display: flex;
-        justify-content: flex-start;
-        column-gap: 16px;
-        margin: 24px 24px 16px 24px;
+  .info {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 16px;
+    margin: 24px 24px 16px 24px;
 
-        .text {
-            .header {
-                color: rgba(17, 24, 39, 1);
-                font-weight: 500;
-                font-size: 18px;
-            }
+    .text {
+      .header {
+        color: rgba(17, 24, 39, 1);
+        font-weight: 500;
+        font-size: 18px;
+      }
 
-            .description {
-                color: rgba(107, 114, 128, 1);
-            }
+      .description {
+        color: rgba(107, 114, 128, 1);
+      }
 
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 24px;
-            color: rgba(17, 24, 39, 1);
-        }
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: rgba(17, 24, 39, 1);
     }
+  }
 
-    .buttons {
-        display: flex;
-        justify-content: flex-end;
-        column-gap: 12px;
-        background-color: rgba(249, 250, 251, 1);
-        padding: 12px 24px;
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 12px;
+    background-color: rgba(249, 250, 251, 1);
+    padding: 12px 24px;
 
-        .btn {
-            height: 38px;
-            padding: 9px 17px;
-            border-radius: 6px;
-            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    .btn {
+      height: 38px;
+      padding: 9px 17px;
+      border-radius: 6px;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 
-            &.outline {
-                background-color: #FFF;
-                color: rgba(55, 65, 81, 1);
-                border: 1px solid rgba(209, 213, 219, 1);
-            }
+      &.outline {
+        background-color: #fff;
+        color: rgba(55, 65, 81, 1);
+        border: 1px solid rgba(209, 213, 219, 1);
+      }
 
-            &.alert {
-                background-color: rgba(221, 0, 53, 1);
-                color: #FFF;
-            }
+      &.alert {
+        background-color: rgba(221, 0, 53, 1);
+        color: #fff;
+      }
 
-            &.primary {
-                background-color: rgba(58, 51, 149, 1);
-                color: #FFF;
-            }
-        }
+      &.primary {
+        background-color: rgba(58, 51, 149, 1);
+        color: #fff;
+      }
     }
+  }
 }
 
 ::ng-deep {
-    .mat-mdc-dialog-surface {
-        &.mdc-dialog__surface {
-            border-radius: 8px !important;
-        }
+  .mat-mdc-dialog-surface {
+    &.mdc-dialog__surface {
+      border-radius: 8px !important;
     }
+  }
 }

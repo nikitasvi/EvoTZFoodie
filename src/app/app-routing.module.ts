@@ -7,6 +7,7 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CreateRecipeComponent } from './components/recipe/create-recipe/create-recipe.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'auth', component: LoginComponent },
   { path: 'recipe', component: RecipeListComponent },
   { path: 'recipe/:id', component: RecipeComponent },
+  { path: 'create-recipe', component: CreateRecipeComponent },
   { 
     path: 'admin', 
     loadChildren: () => import('./components/admin/admin-routing.module').then(m => m.AdminRoutingModule),

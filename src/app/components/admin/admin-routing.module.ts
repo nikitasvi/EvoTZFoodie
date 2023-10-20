@@ -6,18 +6,19 @@ import { UsersComponent } from './users/users.component';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 
 const routes: Routes = [
-    { path: '', 
-      component: AdminPageComponent,
-      children: [
-        { path: 'users', component: UsersComponent },
-        { path: 'recipes', component: RecipeAdminComponent },
-        { path: 'recipes/:id', component: EditRecipeComponent },
-      ]
+  {
+    path: '',
+    component: AdminPageComponent,
+    children: [
+      { path: 'users', component: UsersComponent },
+      { path: 'recipes', component: RecipeAdminComponent },
+      { path: 'recipes/:id', component: EditRecipeComponent },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

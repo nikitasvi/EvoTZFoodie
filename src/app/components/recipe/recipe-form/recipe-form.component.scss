@@ -1,61 +1,61 @@
 h2 {
-    color: rgba(17, 24, 39, 1);
-    font-weight: 600;
-    font-size: 18px;
+  color: rgba(17, 24, 39, 1);
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .underline {
-    border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .form {
-    margin: 40px 0px;
-    
-    .section {
-        margin: 40px 0px 20px 0px;
+  margin: 40px 0px;
+
+  .section {
+    margin: 40px 0px 20px 0px;
+  }
+
+  .property {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80px;
+
+    .name {
+      min-width: 400px;
+      font-weight: 500;
+      color: #374151;
     }
 
-    .property {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        min-height: 80px;
+    .input {
+      margin: 20px 0px;
 
-        .name {
-            min-width: 400px;
-            font-weight: 500;
-            color: #374151;
-        }
+      &_default {
+        width: 320px;
+      }
 
-        .input {
-            margin: 20px 0px; 
-            
-            &_default{
-                width: 320px;
-            }
+      &_extend {
+        width: 512px;
+      }
 
-            &_extend {
-                width: 512px;
-            }
-
-            &.textarea {
-                resize: vertical;
-                min-height: 93px;
-                width: 512px;
-                padding: 9px 13px;
-            }
-        }
+      &.textarea {
+        resize: vertical;
+        min-height: 93px;
+        width: 512px;
+        padding: 9px 13px;
+      }
     }
+  }
 
-    .btn {
-        height: 50px;
-        font-weight: 500;
-        font-size: 16px;
-    }
+  .btn {
+    height: 50px;
+    font-weight: 500;
+    font-size: 16px;
+  }
 
-    .submit {
-        margin-top: 50px;
-        display: flex;
-        justify-content: flex-end;
-    }
+  .submit {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+  }
 }

@@ -15,4 +15,12 @@ export class RecipesService {
   public getRecipe(id: number) {
     return this.apiClient.get<IRecipe>(`posts/${id}`);
   }
+
+  public updateRecipe(id: number, data: Object) {
+    return this.apiClient.patch<IRecipe>(`posts/${id}`, data);
+  }
+
+  public createRecipe(recipe: IRecipe) {
+    return this.apiClient.post<IRecipe>('posts', recipe);
+  }
 }

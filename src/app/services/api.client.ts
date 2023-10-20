@@ -65,6 +65,18 @@ export class ApiClient {
       .pipe(catchError(this.handleError));
   }
 
+  public patch<T>(
+    endpoint: string,
+    data: any,
+    options?: { headers?: HttpHeaders }
+  ): Observable<T> {
+    const url = this.buildUrl(endpoint);
+    const headers = options?.headers || this.getDefaultHeaders();
+    return this.http
+      .patch<T>(url, data, { headers })
+      .pipe(catchError(this.handleError));
+  }
+  
   public delete<T>(
     endpoint: string,
     options?: { headers?: HttpHeaders }

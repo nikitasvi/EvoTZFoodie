@@ -33,6 +33,7 @@ import { RecipeAdminComponent } from './components/admin/recipes/recipe.componen
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CreateRecipeComponent } from './components/recipe/create-recipe/create-recipe.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     RecipeCardComponent,
     RecipeListComponent,
     ErrorPageComponent,
+    CreateRecipeComponent,
   ],
   imports: [
     BrowserModule,

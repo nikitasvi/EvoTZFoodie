@@ -17,8 +17,7 @@ export class RecipeCardComponent {
   @Select(RecipeState.likedPosts)
   likedPosts$!: Observable<number[]>;
 
-  constructor(private readonly store: Store, private readonly meta: Meta) {
-  }
+  constructor(private readonly store: Store, private readonly meta: Meta) {}
 
   public likePost(postId: number) {
     if (this.isRecipeLiked(postId)) {

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IRecipe } from 'src/app/models/Recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -9,12 +8,27 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './edit-recipe.component.html',
   styleUrls: ['./edit-recipe.component.scss'],
 })
-export class EditRecipeComponent {
+export class EditRecipeComponent implements OnInit {
   public recipe: IRecipe | null = null;
-  
-  constructor(private readonly recipesService: RecipesService) {
-    this.recipesService.getRecipe(1).subscribe((recipe) => {
-      this.recipe = recipe;
+  public id!: number;
+
+  constructor(
+    private readonly recipesService: RecipesService,
+    private readonly route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.id = Number(params.get('id'));
+      if (this.id) {
+        console.log('ID from route:', this.id);
+      }
     });
+
+    if (this.id) {
+      this.recipesService.getRecipe(this.id).subscribe((recipe) => {
+        this.recipe = recipe;
+      });
+    }
   }
 }

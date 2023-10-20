@@ -5,15 +5,18 @@
     </div>
     <div class="property underline">
       <div class="name">Название рецепта</div>
-      <input class="input input_extend" formControlName="title"/>
+      <input class="input input_extend" formControlName="title" />
     </div>
     <div class="property underline">
       <div class="name">Краткое описание</div>
-      <textarea class="input input_extend textarea" formControlName="body"></textarea>
+      <textarea
+        class="input input_extend textarea"
+        formControlName="body"
+      ></textarea>
     </div>
     <div class="property underline">
       <div class="name">Фотография</div>
-      <input class="input input_extend" formControlName="image"/>
+      <input class="input input_extend" formControlName="image" />
     </div>
   </div>
   <div class="additional_information">
@@ -22,31 +25,31 @@
     </div>
     <div class="property underline">
       <div class="name">Категория</div>
-      <input class="input input_default" formControlName="tags"/>
+      <input class="input input_default" formControlName="tags" />
     </div>
     <div class="property underline">
       <div class="name">Время приготовления</div>
-      <input class="input input_default" formControlName="timeCooking"/>
+      <input class="input input_default" formControlName="timeCooking" />
     </div>
     <div class="property underline">
       <div class="name">Первый ингридиент</div>
-      <input class="input input_extend" formControlName="ingredient"/>
+      <input class="input input_extend" formControlName="ingredient" />
     </div>
     <div class="property underline">
       <div class="name">Белки</div>
-      <input class="input input_extend" formControlName="belki"/>
+      <input class="input input_extend" formControlName="belki" />
     </div>
     <div class="property underline">
       <div class="name">Жиры</div>
-      <input class="input input_default" formControlName="fats"/>
+      <input class="input input_default" formControlName="fats" />
     </div>
     <div class="property underline">
       <div class="name">Углеводы</div>
-      <input class="input input_default" formControlName="carbohydrates"/>
+      <input class="input input_default" formControlName="carbohydrates" />
     </div>
     <div class="property underline">
       <div class="name">Калории</div>
-      <input class="input input_default" formControlName="calories"/>
+      <input class="input input_default" formControlName="calories" />
     </div>
   </div>
   <div class="detail-information">
@@ -58,7 +61,11 @@
     </div>
     <div class="property underline">
       <div class="name">Калории</div>
-      <input class="input input_default" placeholder="Разогреть сковородку" formControlName="firstStep"/>
+      <input
+        class="input input_default"
+        placeholder="Разогреть сковородку"
+        formControlName="firstStep"
+      />
     </div>
     <div class="property underline">
       <div class="name">Калории</div>
@@ -69,7 +76,22 @@
       ></textarea>
     </div>
     <div class="submit">
-        <button type="submit" class="btn primary">Редактировать этот рецепт</button>
+      <button
+        type="submit"
+        class="btn primary"
+        *ngIf="isEditMode"
+        (click)="update()"
+      >
+        Редактировать этот рецепт
+      </button>
+      <button
+        type="submit"
+        class="btn primary"
+        *ngIf="!isEditMode"
+        (click)="create()"
+      >
+        Создать рецепт
+      </button>
     </div>
   </div>
 </form>
