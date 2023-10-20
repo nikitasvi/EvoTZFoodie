@@ -81,6 +81,7 @@ export class MainPageComponent {
   public subscribed() {
     Notify.success('Вы подписались на рассылку');
   }
+  
   private initPoints() {
     this.whyUsPoints = [
       {

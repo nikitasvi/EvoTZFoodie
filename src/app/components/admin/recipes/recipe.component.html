@@ -20,7 +20,7 @@
         <div class="row">{{ recipe.tags }}</div>
         <div class="row">
             <a [routerLink]="['/admin/recipes/', recipe.id]" class="edit"><img src="/assets/images/edit-recipe.svg"></a>
-            <a class="delete"><img src="/assets/images/delete-repice.svg"></a>
+            <a class="delete" (click)="openDeleteDialog(recipe.id)"><img src="/assets/images/delete-repice.svg"></a>
         </div>
     </div>
 </div>
